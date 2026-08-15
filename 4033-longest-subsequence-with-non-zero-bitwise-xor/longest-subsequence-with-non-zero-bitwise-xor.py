@@ -11,4 +11,6 @@ class Solution:
         for num in nums:
             if num != 0:
                 return(n - 1)
-        return 0
+                break
+        else:
+            return 0
