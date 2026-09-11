@@ -1,0 +1,33 @@
+class Solution:
+    def totalNumbers(self, digits: List[int]) -> int:
+        result = set()
+
+        for num in range(100, 1000):
+
+            if num % 2 != 0:
+                continue
+
+            a = num // 100
+            b = (num // 10) % 10
+            c = num % 10
+
+            temp = digits.copy()
+
+            if a in temp:
+                temp.remove(a)
+            else:
+                continue
+
+            if b in temp:
+                temp.remove(b)
+            else:
+                continue
+
+            if c in temp:
+                temp.remove(c)
+            else:
+                continue
+
+            result.add(num)
+
+        return len(result)
